@@ -9,8 +9,8 @@
     }
 
     .page-grid {
-      background-color: darkblue;
       display: grid;
+      grid-gap: 5px;
       grid-template-columns: 10px 1fr 10px;
       grid-template-rows: 4fr;
       grid-template-areas:
@@ -22,14 +22,17 @@
 
     .page-grid > .title-bar {
       grid-area: title;
+      background-color: darkblue;
     }
 
     .page-grid > .nav-bar {
       grid-area: navbar;
+      background-color: darkblue;
     }
 
     .page-grid > .content-section {
       grid-area: contentsection;
+      background-color: darkblue;
     }
 
     .page-grid > .footer {
@@ -45,34 +48,55 @@
 
     .nav-bar > .home {
       grid-area: home;
+      text-decoration: none;
+      color: black;
     }
 
     .nav-bar > .about {
       grid-area: about;
+      text-decoration: none;
+      color: black;
     }
 
     .subscription-form {
       display: grid;
-      grid-template-columns: 1fr 2fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 2fr 1fr;
+      grid-gap: 7px;
       grid-template-areas:
-        ". actionmessage ."
-        ". fname ."
-        ". lname ."
-        ". email ."
-        ". emailconfirm ."
-        ". submit .";
+        ". . actionmessage actionmessage ."
+        ". . fnamelabel fname ."
+        ". . lnamelabel lname ."
+        ". . emaillabel email ."
+        ". . emailconfirmlabel emailconfirm ."
+        ". . . submit .";
+    }
+
+    .subscription-form > .fnamelabel {
+      grid-area: fnamelabel;
     }
 
     .subscription-form > .fname {
       grid-area: fname;
     }
 
+    .subscription-form > .lnamelabel {
+      grid-area: lnamelabel;
+    }
+
     .subscription-form > .lname {
       grid-area: lname;
     }
 
+    .subscription-form > .emaillabel {
+      grid-area: emaillabel;
+    }
+
     .subscription-form > .email {
       grid-area: email;
+    }
+
+    .subscription-form > .emailconfirmlabel {
+      grid-area: emailconfirmlabel;
     }
 
     .subscription-form > .emailconfirm {
@@ -104,18 +128,14 @@
       </p>
       <section class="subscription-form">
         <p class="actionmessage">Sign up for our Newsletter!</p>
-        <label class="fname">First Name:
-          <input type="text">
-        </label>
-        <label class="lname">Last Name:
-          <input type="text">
-        </label>
-        <label class="email">Email:
-          <input type="email">
-        </label>
-        <label class="emailconfirm">Confirm Email:
-          <input type="email">
-        </label>
+        <label class="fnamelabel">First Name:</label>
+        <input class="fname" type="text">
+        <label class="lnamelabel">Last Name:</label>
+        <input class="lname" type="text">
+        <label class="emaillabel">Email:</label>
+        <input class="email" type="email">
+        <label class="emailconfirmlabel">Confirm Email:</label>
+        <input class="emailconfirm" type="email">
         <button class="submit">Subscribe</button>
       </section>
     </section>
