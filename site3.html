@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width initial-scale=1.0">
     <title>Mind Tune</title>
     <style>
-      * {
+      /* * {
           margin: 0;
           padding: 0;
-        }
+        } */
       body {
+        margin: 0;
+        padding: 0;
         background-color: #EB6E80;
         padding: 5px 10px;
       }
@@ -17,45 +19,48 @@
           color: white;
           display: grid;
           grid-template-columns: 1fr;
-          grid-template-areas:
-            "color-palette"
+          /* grid-template-areas:
             "header-grid"
             "side-nav"
             "main-content"
             "image-grid"
             "subscription-form"
-            "footer";
+            "footer"; */
           grid-gap: 2px;
           border-radius: 5px;
       }
 
       .main-grid > .header-grid {
-        grid-area: header-grid;
+        /* grid-area: header-grid; */
         background-color: #F9CF00;
         text-align: center;
       }
       .main-grid > .side-nav {
-        grid-area: side-nav;
+        /* grid-area: side-nav; */
         background-color: #94618E;
       }
       .main-grid > .main-content {
-        grid-area: main-content;
+        /* grid-area: main-content; */
         background-color: #008F95;
+        padding: 10px;
       }
       .main-grid > .image-grid {
-        grid-area: image-grid;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* grid-area: image-grid; */
         background-color: #E9B000;
       }
       .main-grid > .subscription-form {
-        grid-area: subscription-form;
+        /* grid-area: subscription-form; */
         background-color: #555;
       }
       .main-grid > .footer {
-        grid-area: footer;
+        /* grid-area: footer; */
         background-color: #E24E42;
+        padding: 10px;
       }
       .main-grid > .color-palette {
-        grid-area: color-palette;
+        /* grid-area: color-palette; */
       }
       .side-nav {
         display: grid;
@@ -66,6 +71,7 @@
 
       }
       .side-nav > .link {
+        color: #F4618E;
         margin: 0 auto;
         width: 80%;
         border-radius: 10px;
@@ -75,15 +81,50 @@
         text-decoration: none;
         padding: 20px 0;
       }
+      .image-grid > .image {
+        display: block;
+        margin: 0 auto;
+        width: 90%;
+      }
       .subscription-form {
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 5px;
+        padding: 10px;
       }
       .subscription-form > .submit {
         font-size: 30px;
-        background-color: #F8EEE7
+        background-color: #F8EEE7;
         border-radius: 10px;
+        margin-top: 10px;
+      }
+      .subscription-form > .submit:hover {
+        cursor: pointer;
+      }
+      @media screen and (min-width: 736px) {
+        .main-grid {
+            color: white;
+            display: grid;
+            grid-template-columns: 10px repeat(4, 1fr) 10px;
+            grid-gap: 2px;
+            border-radius: 5px;
+        }
+        .main-grid > .header-grid {
+          grid-column: 2 / 6;
+        }
+        .main-grid > .side-nav {
+          grid-column: 2 / 3;
+          grid-row: 2 / 4
+        }
+        .main-grid > .main-content {
+          grid-column: 3 / 6;
+        }
+        .main-grid > .subscription-form {
+          grid-column: 3 / 6;
+        }
+        .main-grid > .footer {
+          grid-column: 2 / 6;
+        }
       }
       .color-palette > .papaya {
         background-color: #E24E42;
@@ -120,7 +161,7 @@
       <nav class="side-nav">
         <a class="link link1" href="#">Home</a>
         <a class="link link2" href="#">About</a>
-        <a class="link link3" href="#">Info</a>
+        <a class="link link3" href="#subscribe">Subscribe</a>
       </nav>
       <section class="main-content">
         <p class="hook">
@@ -146,13 +187,13 @@
           officia e malis esse, nam officia est ingeniis. Ut appellat sed doctrina.
         </p>
       </section>
-      <section class="image-grid">
-        <div class="image image1"></div>
-        <div class="image image2"></div>
-        <div class="image image3"></div>
-        <div class="image image4"></div>
-      </section>
-      <section class="subscription-form">
+      <!-- <section class="image-grid">
+        <img src="site1/sunset-640.jpg" class="image image1"></img>
+        <img src="site1/sunset-640.jpg" class="image image2"></img>
+        <img src="site1/sunset-640.jpg" class="image image3"></img>
+        <img src="site1/sunset-640.jpg" class="image image4"></img>
+      </section> -->
+      <section id="subscribe" class="subscription-form">
         <p class="actionmessage">Sign up for our Newsletter!</p>
         <label class="fnamelabel">First Name:</label>
         <input class="fname" type="text">
@@ -179,3 +220,4 @@
       </section> -->
     </article>
   </body>
+</html>
