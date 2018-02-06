@@ -5,15 +5,52 @@
   <style>
     .page-grid {
       display: grid;
-      grid-layout-columns: 1fr;
-      grid-layout-rows: 4fr;
+      grid-template-columns: 10px 1fr 10px;
+      grid-template-rows: 4fr;
+      grid-template-areas:
+        "title title title"
+        ". navbar ."
+        ". contentsection ."
+        "footer footer footer"
     }
+
+    .page-grid > .title-bar {
+      grid-area: title;
+    }
+
+    .page-grid > .nav-bar {
+      grid-area: navbar;
+    }
+
+    .page-grid > .content-section {
+      grid-area: contentsection;
+    }
+
+    .page-grid > .footer {
+      grid-area: footer;
+    }
+
+    .nav-bar {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-areas:
+        ". home . about . . . . . . . ."
+    }
+
+    .nav-bar > .home {
+      grid-area: home;
+    }
+
+    .nav-bar > .about {
+      grid-area: about;
+    }
+
   </style>
 </head>
 <body>
   <article class="page-grid">
     <h1 class="title-bar">Mind Tune</h1>
-    <nav class="nav-bar"><a href="#">Home</a><a href="#">About Us</a></nav>
+    <nav class="nav-bar"><a class="home" href="#">Home</a><a class="about" href="#">About Us</a></nav>
     <section class="content-section">
       <p class="mainmessage">
         Duis admodum ubi reprehenderit, ipsum quo do noster ingeniis, minim doctrina eu
@@ -37,9 +74,9 @@
         <button id="submit">Subscribe</button>
       </section>
     </section>
+    <footer class="footer">
+      Copyright 2018
+    </footer>
   </article>
-  <footer class="footer">
-    Copyright 2018
-  </footer>
 </body>
 </html>
