@@ -9,9 +9,82 @@
           margin: 0;
           padding: 0;
         }
-      .color-palette > div {
+      body {
+        background-color: #EB6E80;
+        padding: 5px 10px;
+      }
+      .main-grid {
+          color: white;
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-areas:
+            "color-palette"
+            "header-grid"
+            "side-nav"
+            "main-content"
+            "image-grid"
+            "subscription-form"
+            "footer";
+          grid-gap: 2px;
+          border-radius: 5px;
       }
 
+      .main-grid > .header-grid {
+        grid-area: header-grid;
+        background-color: #F9CF00;
+        text-align: center;
+      }
+      .main-grid > .side-nav {
+        grid-area: side-nav;
+        background-color: #94618E;
+      }
+      .main-grid > .main-content {
+        grid-area: main-content;
+        background-color: #008F95;
+      }
+      .main-grid > .image-grid {
+        grid-area: image-grid;
+        background-color: #E9B000;
+      }
+      .main-grid > .subscription-form {
+        grid-area: subscription-form;
+        background-color: #555;
+      }
+      .main-grid > .footer {
+        grid-area: footer;
+        background-color: #E24E42;
+      }
+      .main-grid > .color-palette {
+        grid-area: color-palette;
+      }
+      .side-nav {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: 50px;
+        grid-gap: 10px;
+        padding: 10px 0;
+
+      }
+      .side-nav > .link {
+        margin: 0 auto;
+        width: 80%;
+        border-radius: 10px;
+        text-align: center;
+        align-self: center;
+        background-color: #F8EEE7;
+        text-decoration: none;
+        padding: 20px 0;
+      }
+      .subscription-form {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 5px;
+      }
+      .subscription-form > .submit {
+        font-size: 30px;
+        background-color: #F8EEE7
+        border-radius: 10px;
+      }
       .color-palette > .papaya {
         background-color: #E24E42;
       }
@@ -33,12 +106,15 @@
       .color-palette > .tangerine {
         background-color: #F19F4D;
       }
+      .color-palette > .shell {
+        background-color: #F8EEE7;
+      }
     </style>
   </head>
   <body>
     <article class="main-grid">
       <header class="header-grid">
-        <h1 class="maintitle">Mind Tune</h1>
+        <h1 class="maintitle">MIND TUNE</h1>
         <h2 class="subtitle">Change your paradigm one conscious thought at a time.</h2>
       </header>
       <nav class="side-nav">
@@ -76,10 +152,22 @@
         <div class="image image3"></div>
         <div class="image image4"></div>
       </section>
-      <footer>
+      <section class="subscription-form">
+        <p class="actionmessage">Sign up for our Newsletter!</p>
+        <label class="fnamelabel">First Name:</label>
+        <input class="fname" type="text">
+        <label class="lnamelabel">Last Name:</label>
+        <input class="lname" type="text">
+        <label class="emaillabel">Email:</label>
+        <input class="email" type="email">
+        <label class="emailconfirmlabel">Confirm Email:</label>
+        <input class="emailconfirm" type="email">
+        <button class="submit">Subscribe</button>
+      </section>
+      <footer class="footer">
         Copyright 2018
       </footer>
-      <section class="color-palette">
+      <!-- <section class="color-palette">
         <div class="papaya"> #E24E42 Papaya </div>
         <div class="mustard"> #E9B000 Mustard </div>
         <div class="blush"> #EB6E80 Blush </div>
@@ -87,6 +175,7 @@
         <div class="grape"> #94618E Grape </div>
         <div class="light"> #F9CF00 Light </div>
         <div class="tangerine"> #F19F4D Tangerine </div>
-      </section>
+        <div class="shell"> #F8EEE7 Shell </div>
+      </section> -->
     </article>
   </body>
