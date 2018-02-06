@@ -10,9 +10,9 @@
 
     .page-grid {
       display: grid;
-      grid-gap: 5px;
+      grid-gap: 15px;
       grid-template-columns: 10px 1fr 10px;
-      grid-template-rows: 4fr;
+      /* grid-template-rows: 4fr; */
       grid-template-areas:
         "title title title"
         ". navbar ."
@@ -22,44 +22,70 @@
 
     .page-grid > .title-bar {
       grid-area: title;
-      background-color: darkblue;
+      font-size: 50px;
+      background-color: lightblue;
+      border-radius: 5px;
+      margin: 0;
+      text-align: center;
+      box-shadow: 2px 2px 2px;
+      background-image: url(triangle.png);
+      background-size: 70px;
+      background-repeat: no-repeat;
     }
 
     .page-grid > .nav-bar {
       grid-area: navbar;
-      background-color: darkblue;
+      border-top: solid #CCC 1px;
+      border-radius: 5px;
+      box-shadow: 2px 2px 2px;
     }
 
     .page-grid > .content-section {
       grid-area: contentsection;
-      background-color: darkblue;
+      border-radius: 5px;
+      box-shadow: 2px 2px 2px;
+      padding: 14px 14px;
+    }
+
+    .page-grid > .content-section > .mainmessage {
+      font-family: Helvetica arial sans-serif;
     }
 
     .page-grid > .footer {
       grid-area: footer;
+      border: 1px solid #111
+      border-radius: 5px;
     }
 
     .nav-bar {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       grid-template-areas:
-        ". home . about . . . . . . . .";
+        ". home . about about . . . . . . .";
     }
 
     .nav-bar > .home {
       grid-area: home;
       text-decoration: none;
       color: black;
+      align-self: center;
     }
 
     .nav-bar > .about {
       grid-area: about;
       text-decoration: none;
       color: black;
+      align-self: center;
     }
 
     .subscription-form {
       display: grid;
+      width: 50%;
+      margin: 0 auto;
+      grid-auto-rows: minmax(50px, auto);
+      border-top: solid pink 2px;
+      border-bottom: solid pink 2px;
+      padding: 5px;
       grid-template-columns: 1fr 1fr 1fr 2fr 1fr;
       grid-gap: 7px;
       grid-template-areas:
@@ -71,6 +97,10 @@
         ". . . submit .";
     }
 
+    .subscription-form > input {
+      border-style: none;
+      border-bottom: solid #eee 2px;
+    }
     .subscription-form > .fnamelabel {
       grid-area: fnamelabel;
     }
