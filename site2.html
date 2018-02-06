@@ -2,8 +2,14 @@
 <html lang="en">
 <head>
   <title>MindTune</title>
+
   <style>
+    body {
+      background-color: white;
+    }
+
     .page-grid {
+      background-color: darkblue;
       display: grid;
       grid-template-columns: 10px 1fr 10px;
       grid-template-rows: 4fr;
@@ -34,7 +40,7 @@
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       grid-template-areas:
-        ". home . about . . . . . . . ."
+        ". home . about . . . . . . . .";
     }
 
     .nav-bar > .home {
@@ -45,6 +51,41 @@
       grid-area: about;
     }
 
+    .subscription-form {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-template-areas:
+        ". actionmessage ."
+        ". fname ."
+        ". lname ."
+        ". email ."
+        ". emailconfirm ."
+        ". submit .";
+    }
+
+    .subscription-form > .fname {
+      grid-area: fname;
+    }
+
+    .subscription-form > .lname {
+      grid-area: lname;
+    }
+
+    .subscription-form > .email {
+      grid-area: email;
+    }
+
+    .subscription-form > .emailconfirm {
+      grid-area: emailconfirm;
+    }
+
+    .subscription-form > .submit {
+      grid-area: submit;
+    }
+
+    .subscription-form > .actionmessage {
+      grid-area: actionmessage;
+    }
   </style>
 </head>
 <body>
@@ -62,16 +103,20 @@
         laboris.
       </p>
       <section class="subscription-form">
-        <p>Sign up for our Newsletter!</p>
-        <label for="fname">First Name:</label>
-        <input id="fname" type="text">
-        <label for="lname">Last Name:</label>
-        <input id="lname" type="text">
-        <label for="email">Email:</label>
-        <input id="email" type="email">
-        <label for="email-confirm">Confirm Email:</label>
-        <input id="email-confirm" type="email">
-        <button id="submit">Subscribe</button>
+        <p class="actionmessage">Sign up for our Newsletter!</p>
+        <label class="fname">First Name:
+          <input type="text">
+        </label>
+        <label class="lname">Last Name:
+          <input type="text">
+        </label>
+        <label class="email">Email:
+          <input type="email">
+        </label>
+        <label class="emailconfirm">Confirm Email:
+          <input type="email">
+        </label>
+        <button class="submit">Subscribe</button>
       </section>
     </section>
     <footer class="footer">
